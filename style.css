@@ -1,0 +1,724 @@
+/* -------------------------
+   GLOBAL
+-------------------------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #ffffff;
+    color: #161616;
+}
+
+/* -------------------------
+   ABOUT US
+-------------------------- */
+
+.about-section {
+    padding: 110px 7%;
+    background: #f3f1ed;
+}
+
+.about-content {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 90px;
+    align-items: start;
+}
+
+.about-heading span {
+    display: block;
+    margin-bottom: 18px;
+
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #777777;
+}
+
+.about-heading h2 {
+    max-width: 480px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 50px;
+    line-height: 1.15;
+    font-weight: 400;
+}
+
+.about-text {
+    padding-top: 30px;
+}
+
+.about-text p {
+    margin-bottom: 22px;
+
+    color: #555555;
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+.about-link {
+    display: inline-block;
+    margin-top: 12px;
+    padding-bottom: 6px;
+
+    color: #161616;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    font-size: 11px;
+    letter-spacing: 1.7px;
+
+    border-bottom: 1px solid #161616;
+}
+   CONTACT / TRADE ENQUIRY
+-------------------------- */
+/* -------------------------
+   NAVIGATION
+-------------------------- */
+
+.navbar {
+    height: 90px;
+    padding: 0 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.logo {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px;
+    letter-spacing: 3px;
+    font-weight: 600;
+}
+.logo a {
+    display: block;
+}
+
+.logo img {
+    display: block;
+    width: 150px;
+    height: 70px;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+
+    list-style: none;
+}
+
+.nav-links a {
+    color: #161616;
+    text-decoration: none;
+
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+    opacity: 0.55;
+}
+
+
+/* -------------------------
+   HERO
+-------------------------- */
+
+#home {
+    min-height: calc(100vh - 90px);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+    padding: 40px 20px;
+
+    background: linear-gradient(
+        135deg,
+        #ffffff,
+        #f3f3f3
+    );
+}
+
+#home h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(42px, 7vw, 88px);
+    font-weight: 400;
+
+    letter-spacing: 8px;
+    margin-bottom: 22px;
+}
+
+#home p {
+    font-size: 15px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    margin-bottom: 38px;
+    color: #666666;
+}
+
+
+/* -------------------------
+   HERO BUTTONS
+-------------------------- */
+
+#home a {
+    display: inline-block;
+
+    min-width: 190px;
+    padding: 15px 28px;
+    margin: 6px;
+
+    text-decoration: none;
+    text-transform: uppercase;
+
+    font-size: 12px;
+    letter-spacing: 1.5px;
+
+    border: 1px solid #161616;
+
+    color: #ffffff;
+    background: #161616;
+
+    transition: 0.3s ease;
+}
+
+#home a:hover {
+    color: #161616;
+    background: transparent;
+}
+/* -------------------------
+   DIAMONDS SECTION
+-------------------------- */
+
+.diamonds-section {
+    padding: 100px 7%;
+    background: #ffffff;
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px;
+}
+
+.section-heading span {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #777777;
+}
+
+.section-heading h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 44px;
+    font-weight: 400;
+    margin: 15px 0 20px;
+}
+
+.section-heading p {
+    color: #666666;
+    line-height: 1.7;
+}
+
+.diamond-categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.diamond-card {
+    text-align: center;
+    padding: 45px 20px;
+    background: #f7f7f7;
+}
+
+.diamond-placeholder {
+    font-size: 65px;
+    margin-bottom: 25px;
+}
+
+.diamond-card h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.diamond-card a {
+    color: #161616;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid #161616;
+    padding-bottom: 4px;
+}
+/* -------------------------
+   JEWELLERY SECTION
+-------------------------- */
+
+.jewellery-section {
+    padding: 100px 7%;
+    background: #f7f7f7;
+}
+
+.jewellery-categories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.jewellery-card {
+    background: #ffffff;
+    text-align: center;
+    padding: 50px 25px;
+    min-height: 260px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.jewellery-placeholder {
+    font-size: 60px;
+    margin-bottom: 25px;
+}
+
+.jewellery-card h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+
+.jewellery-card a {
+    color: #161616;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-bottom: 1px solid #161616;
+    padding-bottom: 4px;
+}
+/* -------------------------
+   FOR RETAILERS SECTION
+-------------------------- */
+
+.retailers-section {
+    padding: 110px 7%;
+    background: #161616;
+    color: #ffffff;
+}
+
+.retailers-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-label {
+    display: block;
+    margin-bottom: 18px;
+
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #bdbdbd;
+}
+
+.retailers-content > h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 48px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.retailers-intro {
+    max-width: 700px;
+    margin: 0 auto 60px;
+
+    color: #cfcfcf;
+    line-height: 1.8;
+}
+
+.retailer-benefits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+
+    margin-bottom: 50px;
+    background: #444444;
+}
+
+.benefit {
+    padding: 45px 35px;
+    background: #161616;
+}
+
+.benefit h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 23px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.benefit p {
+    color: #bdbdbd;
+    line-height: 1.7;
+    font-size: 14px;
+}
+
+.retailer-button {
+    display: inline-block;
+    padding: 16px 30px;
+
+    border: 1px solid #ffffff;
+
+    color: #161616;
+    background: #ffffff;
+
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 12px;
+
+    transition: 0.3s ease;
+}
+
+.retailer-button:hover {
+    color: #ffffff;
+    background: transparent;
+}
+
+/* -------------------------
+   CONTACT / TRADE ENQUIRY
+-------------------------- */
+
+.contact-section {
+    padding: 110px 7%;
+    background: #ffffff;
+}
+
+.contact-heading {
+    max-width: 700px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.contact-heading span {
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #777777;
+}
+
+.contact-heading h2 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 48px;
+    font-weight: 400;
+    margin: 15px 0 20px;
+}
+
+.contact-heading p {
+    color: #666666;
+    line-height: 1.8;
+}
+
+.enquiry-form {
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    margin-bottom: 10px;
+
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+
+    border: 1px solid #d7d7d7;
+    background: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #161616;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.enquiry-form button {
+    display: block;
+    margin: 10px auto 0;
+
+    padding: 17px 38px;
+
+    border: 1px solid #161616;
+    background: #161616;
+    color: #ffffff;
+
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.enquiry-form button:hover {
+    background: transparent;
+    color: #161616;
+}
+/* -------------------------
+   FOOTER
+-------------------------- */
+
+.site-footer {
+    background: #0f0f0f;
+    color: #ffffff;
+    padding: 75px 7% 25px;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 60px;
+}
+
+.footer-brand h3 {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.footer-brand p {
+    max-width: 380px;
+    color: #aaaaaa;
+    font-size: 14px;
+    line-height: 1.8;
+}
+
+.footer-links,
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-links h4,
+.footer-contact h4 {
+    margin-bottom: 20px;
+
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #888888;
+}
+
+.footer-links a,
+.footer-contact a {
+    color: #cccccc;
+    text-decoration: none;
+    font-size: 14px;
+    margin-bottom: 12px;
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover,
+.footer-contact a:hover {
+    color: #ffffff;
+}
+
+.footer-enquiry-link {
+    margin-top: 12px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 11px !important;
+}
+
+.footer-bottom {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-top: 25px;
+
+    border-top: 1px solid #2c2c2c;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #777777;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+    .about-section {
+        padding: 75px 6%;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-heading h2 {
+        font-size: 36px;
+    }
+
+    .about-text {
+        padding-top: 0;
+    }
+/* -------------------------
+   MOBILE RESPONSIVE DESIGN
+-------------------------- */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        height: auto;
+        padding: 22px 5%;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-bottom: 45px;
+    }
+
+    .site-footer {
+        padding: 60px 6% 25px;
+    }
+
+    .footer-brand p {
+        max-width: 100%;
+    }
+
+    .logo {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 18px;
+    }
+
+    .nav-links a {
+        font-size: 10px;
+    }
+
+    #home {
+        min-height: 75vh;
+        padding: 70px 20px;
+    }
+
+    #home h1 {
+        font-size: 38px;
+        letter-spacing: 4px;
+    }
+
+    #home p {
+        font-size: 11px;
+        line-height: 1.8;
+        letter-spacing: 2px;
+    }
+
+    #home a {
+        display: block;
+        width: 100%;
+        max-width: 280px;
+        margin: 10px auto;
+    }
+
+    .diamonds-section,
+    .jewellery-section,
+    .retailers-section,
+    .contact-section {
+        padding: 75px 6%;
+    }
+
+    .section-heading h2,
+    .retailers-content > h2,
+    .contact-heading h2 {
+        font-size: 36px;
+    }
+
+    .diamond-categories {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .jewellery-categories {
+        grid-template-columns: 1fr;
+    }
+
+    .retailer-benefits {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+}
