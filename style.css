@@ -18,7 +18,8 @@ body {
     color: #161616;
 }
 
-/* -------------------------
+   HERO
+-------------------------- *//* -------------------------
    ABOUT US
 -------------------------- */
 
@@ -141,76 +142,150 @@ body {
 
 
 /* -------------------------
-   HERO
+   PREMIUM HERO
 -------------------------- */
 
-#home {
+.hero-section {
+    position: relative;
     min-height: calc(100vh - 90px);
-
     display: flex;
-    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    overflow: hidden;
+    padding: 80px 7%;
 
-    text-align: center;
-    padding: 40px 20px;
+    background-image: url("images/hero-diamond.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    color: #ffffff;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
 
     background: linear-gradient(
-        135deg,
-        #ffffff,
-        #f3f3f3
+        90deg,
+        rgba(5, 8, 12, 0.92) 0%,
+        rgba(5, 8, 12, 0.72) 42%,
+        rgba(5, 8, 12, 0.18) 72%,
+        rgba(5, 8, 12, 0.08) 100%
     );
 }
 
-#home h1 {
-    font-family: Georgia, "Times New Roman", serif;
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 760px;
+}
 
-    font-size: clamp(42px, 7vw, 88px);
+.hero-eyebrow {
+    display: block;
+    margin-bottom: 25px;
+
+    font-size: 11px;
+    letter-spacing: 4px;
+    font-weight: 500;
+
+    color: rgba(255, 255, 255, 0.75);
+}
+
+.hero-content h1 {
+    max-width: 760px;
+    margin: 0 0 28px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(48px, 6vw, 86px);
+    line-height: 1.04;
+    letter-spacing: -2px;
     font-weight: 400;
 
-    letter-spacing: 8px;
-    margin-bottom: 22px;
+    color: #ffffff;
 }
 
-#home p {
-    font-size: 15px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-
+.hero-content p {
+    max-width: 520px;
     margin-bottom: 38px;
-    color: #666666;
+
+    font-size: 16px;
+    line-height: 1.8;
+    letter-spacing: 0.5px;
+
+    color: rgba(255, 255, 255, 0.78);
 }
 
+.hero-actions {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+}
 
-/* -------------------------
-   HERO BUTTONS
--------------------------- */
-
-#home a {
-    display: inline-block;
+.hero-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 
     min-width: 190px;
-    padding: 15px 28px;
-    margin: 6px;
+    padding: 16px 28px;
 
     text-decoration: none;
     text-transform: uppercase;
 
-    font-size: 12px;
-    letter-spacing: 1.5px;
+    font-size: 11px;
+    letter-spacing: 2px;
 
-    border: 1px solid #161616;
-
-    color: #ffffff;
-    background: #161616;
-
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
 }
 
-#home a:hover {
-    color: #161616;
+.hero-btn-primary {
+    background: #ffffff;
+    border: 1px solid #ffffff;
+    color: #111111;
+}
+
+.hero-btn-primary:hover {
     background: transparent;
+    color: #ffffff;
 }
+
+.hero-btn-secondary {
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.65);
+    color: #ffffff;
+}
+
+.hero-btn-secondary:hover {
+    background: #ffffff;
+    border-color: #ffffff;
+    color: #111111;
+}
+
+.hero-scroll {
+    position: absolute;
+    z-index: 2;
+    right: 7%;
+    bottom: 35px;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    font-size: 9px;
+    letter-spacing: 3px;
+
+    color: rgba(255, 255, 255, 0.65);
+}
+
+.scroll-line {
+    display: block;
+    width: 55px;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.55);
+}
+
 /* -------------------------
    DIAMONDS SECTION
 -------------------------- */
@@ -721,4 +796,97 @@ body {
         gap: 0;
     }
 
+}
+/* -------------------------
+   PREMIUM HERO POLISH
+-------------------------- */
+
+@media (min-width: 769px) {
+
+    .hero-content {
+        max-width: 680px;
+    }
+
+    .hero-content h1 {
+        font-size: clamp(46px, 5vw, 72px);
+        line-height: 1.08;
+        letter-spacing: -1.5px;
+    }
+
+    .hero-section {
+        background-position: 68% center;
+    }
+}
+
+
+/* -------------------------
+   PREMIUM HERO MOBILE
+-------------------------- */
+
+@media (max-width: 768px) {
+
+    .hero-section {
+        min-height: 78vh;
+        padding: 70px 7% 55px;
+
+        align-items: flex-end;
+
+        background-position: 62% center;
+    }
+
+    .hero-overlay {
+        background: linear-gradient(
+            180deg,
+            rgba(5, 8, 12, 0.18) 0%,
+            rgba(5, 8, 12, 0.48) 38%,
+            rgba(5, 8, 12, 0.96) 100%
+        );
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-eyebrow {
+        margin-bottom: 16px;
+
+        font-size: 9px;
+        letter-spacing: 3px;
+    }
+
+    .hero-content h1 {
+        margin-bottom: 20px;
+
+        font-size: clamp(38px, 11vw, 54px);
+        line-height: 1.05;
+        letter-spacing: -1px;
+    }
+
+    .hero-content p {
+        max-width: 420px;
+        margin-bottom: 28px;
+
+        font-size: 14px;
+        line-height: 1.6;
+        letter-spacing: 0;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    .hero-btn {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0;
+
+        padding: 15px 20px;
+    }
+
+    .hero-scroll {
+        display: none;
+    }
 }
