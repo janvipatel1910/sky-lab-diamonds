@@ -201,3 +201,41 @@ if (form) {
         document.getElementById("name").focus();
     });
 }
+
+
+/* -------------------------
+   4. MOBILE MENU
+-------------------------- */
+
+const navToggle = document.querySelector(".nav-toggle");
+const navLinks = document.getElementById("nav-links");
+
+if (navToggle && navLinks) {
+    function setMenu(open) {
+        navLinks.classList.toggle("is-open", open);
+        navToggle.setAttribute("aria-expanded", open);
+        navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    }
+
+    navToggle.addEventListener("click", () => {
+        setMenu(!navLinks.classList.contains("is-open"));
+    });
+
+    // close after choosing a link
+    navLinks.querySelectorAll("a").forEach((a) => {
+        a.addEventListener("click", () => setMenu(false));
+    });
+
+    // close with the Escape key
+    document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape" && navLinks.classList.contains("is-open")) {
+            setMenu(false);
+            navToggle.focus();
+        }
+    });
+
+    // close when tapping outside the menu
+    document.addEventListener("click", (e) => {
+        if (!e.target.closest(".navbar")) setMenu(false);
+    });
+}
