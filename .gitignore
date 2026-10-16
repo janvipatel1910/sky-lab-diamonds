@@ -1,2 +1,10 @@
 .DS_Store
 index-before-form-fix.html
+.work/
+__pycache__/
+
+# local backups (git history replaces these)
+*-before-*.html
+*-before-*.css
+upgrade_hero.py
+images/hero-diamond-original.jpg
