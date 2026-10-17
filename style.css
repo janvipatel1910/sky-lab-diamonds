@@ -1711,3 +1711,350 @@ body {
         letter-spacing: 0.5px;
     }
 }
+
+
+/* =========================================
+   THEME V2: "Sky Mist" (light) and "Midnight Sapphire" (dark)
+   Switch by changing data-theme on the <html> tag in index.html:
+   data-theme="mist"  or  data-theme="sapphire"
+========================================= */
+
+:root,
+[data-theme="mist"] {
+    --bg: #F4F6F9;         /* mist white page */
+    --bg-alt: #E6ECF3;     /* parcel-paper blue sections */
+    --card: #FFFFFF;
+    --ink: #14213A;        /* deep sapphire text */
+    --muted: #5B6A80;
+    --line: #D3DCE7;
+    --accent: #3E5C85;     /* sapphire accent for small labels */
+    --btn-bg: #14213A;
+    --btn-fg: #FFFFFF;
+    --footer: #14213A;
+    --stage-glow: rgba(62, 92, 133, 0.10);
+    --stage-shadow: rgba(20, 33, 58, 0.22);
+}
+
+[data-theme="sapphire"] {
+    --bg: #0D1626;
+    --bg-alt: #111D31;
+    --card: #15233A;
+    --ink: #EDF1F7;
+    --muted: #9BA9BD;
+    --line: #26354E;
+    --accent: #CDB27A;     /* champagne */
+    --btn-bg: #EDF1F7;
+    --btn-fg: #0D1626;
+    --footer: #08101C;
+    --stage-glow: rgba(173, 196, 230, 0.16);
+    --stage-shadow: rgba(0, 0, 0, 0.55);
+}
+
+/* typography */
+body {
+    font-family: "Jost", Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    background: var(--bg);
+    color: var(--ink);
+}
+
+h1, h2, h3,
+.hero-content h1,
+.section-heading h2,
+.retailers-content > h2,
+.contact-heading h2,
+.about-heading h2,
+.shape-info h3,
+.diamond-card h3,
+.jewellery-card h3,
+.benefit h3,
+.footer-brand h3,
+.form-success h3 {
+    font-family: "Bodoni Moda", Georgia, "Times New Roman", serif;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+}
+
+.hero-content h1 { letter-spacing: -0.02em; }
+
+.form-group input,
+.form-group select,
+.form-group textarea,
+.shape-option,
+button {
+    font-family: "Jost", Arial, Helvetica, sans-serif;
+}
+
+/* header */
+.navbar {
+    background: color-mix(in srgb, var(--bg) 92%, transparent);
+    backdrop-filter: saturate(140%) blur(10px);
+    -webkit-backdrop-filter: saturate(140%) blur(10px);
+    border-bottom-color: var(--line);
+}
+
+.nav-links a { color: var(--ink); font-weight: 400; }
+
+/* labels and secondary text */
+.section-heading span,
+.contact-heading span,
+.about-heading span,
+.section-label,
+.shape-count,
+.diamonds-section .section-heading span {
+    color: var(--accent);
+}
+
+.section-heading p,
+.contact-heading p,
+.about-text p,
+.retailers-intro,
+.benefit p,
+.shape-info p,
+.shape-facts dt,
+.form-success p,
+.diamonds-section .section-heading p {
+    color: var(--muted);
+}
+
+/* section backgrounds */
+.diamonds-section,
+.retailers-section,
+.contact-section { background: var(--bg); color: var(--ink); }
+
+.jewellery-section,
+.about-section { background: var(--bg-alt); color: var(--ink); }
+
+/* the one bold moment: a lit stage for the diamond */
+.diamonds-section {
+    background:
+        radial-gradient(ellipse 55% 60% at 28% 58%, var(--stage-glow), transparent 70%),
+        var(--bg);
+}
+
+.shape-stage::before {
+    background: radial-gradient(ellipse at 50% 50%, var(--stage-shadow), transparent 70%);
+}
+
+.shape-stage img {
+    filter: drop-shadow(0 26px 24px color-mix(in srgb, var(--stage-shadow) 70%, transparent));
+}
+
+/* cards */
+.jewellery-card,
+.benefit,
+.form-success { background: var(--card); }
+
+.jewellery-card h3,
+.benefit h3 { color: var(--ink); }
+
+.retailer-benefits { background: var(--line); }
+
+/* links styled as underlined text */
+.jewellery-card a,
+.about-link {
+    color: var(--ink);
+    border-bottom-color: var(--ink);
+}
+
+/* buttons */
+.shape-enquire,
+.retailer-button,
+.enquiry-form button {
+    border-color: var(--btn-bg);
+    background: var(--btn-bg);
+    color: var(--btn-fg);
+}
+
+.shape-enquire:hover,
+.shape-enquire:focus-visible,
+.retailer-button:hover,
+.enquiry-form button:hover {
+    background: transparent;
+    color: var(--ink);
+    border-color: var(--ink);
+}
+
+.form-success-icon { background: var(--btn-bg); color: var(--btn-fg); }
+
+.form-success button {
+    border-color: var(--ink);
+    color: var(--ink);
+}
+
+.form-success button:hover {
+    background: var(--ink);
+    color: var(--bg);
+}
+
+/* shape explorer controls */
+.shape-arrow {
+    border-color: var(--line);
+    background: color-mix(in srgb, var(--card) 85%, transparent);
+    color: var(--ink);
+}
+
+.shape-arrow:hover,
+.shape-arrow:focus-visible {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--bg);
+}
+
+.shape-facts { border-top-color: var(--line); border-bottom-color: var(--line); }
+.shape-facts dd { color: var(--ink); }
+
+.shape-option { border-color: var(--line); color: var(--muted); }
+.shape-option:hover { color: var(--ink); border-color: var(--muted); }
+.shape-option.is-active {
+    color: var(--ink);
+    border-color: var(--ink);
+    background: var(--card);
+}
+
+.shape-option:focus-visible,
+.shape-arrow:focus-visible,
+.shape-enquire:focus-visible { outline-color: var(--ink); }
+
+/* form */
+.form-group label { color: var(--ink); }
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    background: var(--card);
+    border-color: var(--line);
+    color: var(--ink);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus { border-color: var(--ink); }
+
+.form-group input::placeholder,
+.form-group textarea::placeholder { color: var(--muted); }
+
+/* footer */
+.site-footer { background: var(--footer); }
+.footer-bottom { border-top-color: rgba(255, 255, 255, 0.12); }
+
+/* mobile menu */
+@media (max-width: 768px) {
+    .nav-links { background: var(--bg); border-bottom-color: var(--line); }
+    .nav-links li { border-bottom-color: var(--line); }
+    .nav-toggle span { background: var(--ink); }
+}
+
+
+/* =========================================
+   THEME "CHAMPAGNE" (owner's reference style)
+   Sand frame + white panels + soft grey text + light serif.
+   Use with data-theme="champagne" on <html>.
+========================================= */
+
+[data-theme="champagne"] {
+    --bg: #EAD9C6;         /* sand frame around the panels */
+    --bg-alt: #FFFFFF;
+    --card: #FFFFFF;
+    --panel: #FFFFFF;      /* section panels */
+    --panel-soft: #F6EEE5; /* champagne panel: diamonds stand out here */
+    --ink: #34312D;        /* headings and buttons */
+    --muted: #7B7D82;      /* body text (soft grey) */
+    --line: #E9E0D5;
+    --accent: #A4825B;     /* small labels */
+    --btn-bg: #34312D;
+    --btn-fg: #FFFFFF;
+    --footer: #34312D;
+    --stage-glow: rgba(255, 255, 255, 0.55);
+    --stage-shadow: rgba(80, 58, 32, 0.22);
+}
+
+/* light, elegant serif for headings */
+[data-theme="champagne"] h1,
+[data-theme="champagne"] h2,
+[data-theme="champagne"] h3,
+[data-theme="champagne"] .hero-content h1,
+[data-theme="champagne"] .section-heading h2,
+[data-theme="champagne"] .retailers-content > h2,
+[data-theme="champagne"] .contact-heading h2,
+[data-theme="champagne"] .about-heading h2,
+[data-theme="champagne"] .shape-info h3,
+[data-theme="champagne"] .jewellery-card h3,
+[data-theme="champagne"] .benefit h3,
+[data-theme="champagne"] .footer-brand h3,
+[data-theme="champagne"] .form-success h3 {
+    font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+    font-weight: 500;
+    letter-spacing: 0;
+}
+
+[data-theme="champagne"] .section-heading h2,
+[data-theme="champagne"] .retailers-content > h2,
+[data-theme="champagne"] .contact-heading h2 {
+    font-size: clamp(38px, 4.4vw, 54px);
+}
+
+[data-theme="champagne"] body {
+    font-weight: 300;
+    color: var(--muted);
+}
+
+/* framed panels: each section sits on white with sand around it */
+[data-theme="champagne"] main > section:not(.hero-section) {
+    margin: 0 clamp(10px, 2.6vw, 36px) clamp(10px, 2.2vw, 28px);
+    background: var(--panel);
+}
+
+[data-theme="champagne"] main > section.hero-section {
+    margin-bottom: clamp(10px, 2.2vw, 28px);
+}
+
+/* diamond section on soft champagne so the stones are clearly visible */
+[data-theme="champagne"] main > section.diamonds-section {
+    background:
+        radial-gradient(ellipse 50% 60% at 28% 56%, var(--stage-glow), transparent 70%),
+        var(--panel-soft);
+}
+
+[data-theme="champagne"] .jewellery-section,
+[data-theme="champagne"] .about-section {
+    background: var(--panel);
+}
+
+[data-theme="champagne"] .jewellery-card {
+    background: var(--panel-soft);
+}
+
+[data-theme="champagne"] .benefit {
+    background: var(--panel-soft);
+}
+
+[data-theme="champagne"] .retailer-benefits {
+    background: var(--panel);
+    gap: 14px;
+}
+
+[data-theme="champagne"] .form-group input,
+[data-theme="champagne"] .form-group select,
+[data-theme="champagne"] .form-group textarea {
+    background: #FFFFFF;
+    border-color: #DCCFBF;
+}
+
+[data-theme="champagne"] .shape-option.is-active {
+    background: #FFFFFF;
+}
+
+[data-theme="champagne"] .site-footer {
+    margin: 0 clamp(10px, 2.6vw, 36px) clamp(10px, 2.6vw, 36px);
+}
+
+@media (max-width: 768px) {
+    [data-theme="champagne"] main > section:not(.hero-section) {
+        margin: 0 8px 8px;
+    }
+
+    [data-theme="champagne"] .site-footer {
+        margin: 0 8px 8px;
+    }
+}
