@@ -42,6 +42,30 @@ const SHAPES = {
         desc: "A rectangular or square cut with trimmed corners and brilliant faceting, giving sparkle with a structured outline.",
         character: "Lively, contemporary",
         uses: "Engagement rings, side stones"
+    },
+    marquise: {
+        name: "Marquise",
+        desc: "A long, boat-shaped brilliant cut with pointed ends that makes the most of the stone\u2019s visible size.",
+        character: "Bold, vintage-inspired",
+        uses: "Rings, cluster and halo designs"
+    },
+    heart: {
+        name: "Heart",
+        desc: "A brilliant-cut heart. Good symmetry between the two lobes is key to a well-defined shape.",
+        character: "Romantic, expressive",
+        uses: "Pendants, gift pieces, rings"
+    },
+    cushion: {
+        name: "Cushion",
+        desc: "A square or slightly rectangular cut with softly rounded corners and large facets, giving a vintage-inspired look.",
+        character: "Soft, vintage-inspired",
+        uses: "Engagement rings, halo designs"
+    },
+    trillion: {
+        name: "Trillion",
+        desc: "A triangular brilliant cut with bold, clean lines \u2014 striking as a centre stone or as side stones beside a larger diamond.",
+        character: "Bold, geometric",
+        uses: "Side stones, statement rings, pendants"
     }
 };
 
@@ -59,7 +83,7 @@ if (explorer) {
     // preload all shape photos so switching is instant
     keys.forEach((key) => {
         const pre = new Image();
-        pre.src = `images/diamonds/${key}.jpg`;
+        pre.src = `images/diamonds/${key}.webp`;
     });
 
     function showShape(index, moveFocus = false) {
@@ -80,8 +104,8 @@ if (explorer) {
         clearTimeout(timer);
 
         timer = setTimeout(() => {
-            img.src = `images/diamonds/${key}.jpg`;
-            img.alt = `${shape.name} lab-grown diamond`;
+            img.src = `images/diamonds/${key}.webp`;
+            img.alt = `${shape.name} lab-grown diamond (3D illustration)`;
             document.getElementById("shape-count").textContent =
                 `${String(current + 1).padStart(2, "0")} / ${String(keys.length).padStart(2, "0")}`;
             document.getElementById("shape-name").textContent = shape.name;

@@ -1475,3 +1475,239 @@ section[id] {
         scroll-margin-top: 72px;
     }
 }
+
+
+/* =========================================
+   IVORY THEME (owner request)
+   Change these colours here to restyle the whole site.
+========================================= */
+
+:root {
+    --ivory: #F7F3EC;      /* main page background */
+    --cream: #EFE8DC;      /* alternate sections */
+    --card: #FCFAF6;       /* cards and form fields */
+    --ink: #1C1A17;        /* main text, buttons */
+    --muted: #6E675D;      /* secondary text */
+    --line: #E1D8C9;       /* borders and dividers */
+    --gold: #9C7A45;       /* small labels / accents */
+}
+
+body {
+    background: var(--ivory);
+    color: var(--ink);
+}
+
+/* header */
+.navbar {
+    background: var(--ivory);
+    border-bottom-color: var(--line);
+}
+
+.nav-links a {
+    color: var(--ink);
+}
+
+/* small section labels in gold */
+.section-heading span,
+.contact-heading span,
+.about-heading span,
+.section-label,
+.shape-count {
+    color: var(--gold);
+}
+
+.section-heading p,
+.contact-heading p,
+.about-text p {
+    color: var(--muted);
+}
+
+/* diamonds */
+.diamonds-section {
+    background: var(--ivory);
+    color: var(--ink);
+}
+
+.diamonds-section .section-heading span { color: var(--gold); }
+.diamonds-section .section-heading p { color: var(--muted); }
+
+.shape-stage::before {
+    /* soft floor shadow under the diamond */
+    inset: auto 20% 5% 20%;
+    height: 12%;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at 50% 50%, rgba(90, 68, 35, 0.20), transparent 70%);
+    filter: blur(4px);
+}
+
+.shape-stage img {
+    -webkit-mask-image: none;
+    mask-image: none;
+    object-fit: contain;
+    padding: 6%;
+    filter: drop-shadow(0 22px 22px rgba(70, 52, 25, 0.16));
+}
+
+.shape-arrow {
+    border-color: var(--line);
+    background: rgba(252, 250, 246, 0.85);
+    color: var(--ink);
+}
+
+.shape-arrow:hover,
+.shape-arrow:focus-visible {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--ivory);
+}
+
+.shape-info p { color: var(--muted); }
+
+.shape-facts {
+    border-top-color: var(--line);
+    border-bottom-color: var(--line);
+}
+
+.shape-facts dt { color: var(--muted); }
+.shape-facts dd { color: var(--ink); }
+
+.shape-enquire {
+    border-color: var(--ink);
+    background: var(--ink);
+    color: var(--ivory);
+}
+
+.shape-enquire:hover,
+.shape-enquire:focus-visible {
+    background: transparent;
+    color: var(--ink);
+}
+
+.shape-picker {
+    grid-template-columns: repeat(5, 1fr);
+}
+
+@media (min-width: 1100px) {
+    .shape-picker {
+        grid-template-columns: repeat(10, 1fr);
+    }
+}
+
+.shape-option {
+    border-color: var(--line);
+    color: var(--muted);
+}
+
+.shape-option:hover {
+    color: var(--ink);
+    border-color: #BFB29D;
+}
+
+.shape-option.is-active {
+    color: var(--ink);
+    border-color: var(--ink);
+    background: var(--card);
+}
+
+.shape-option:focus-visible,
+.shape-arrow:focus-visible,
+.shape-enquire:focus-visible {
+    outline-color: var(--ink);
+}
+
+/* jewellery */
+.jewellery-section { background: var(--cream); }
+.jewellery-card { background: var(--card); }
+.jewellery-card a,
+.about-link { color: var(--ink); border-bottom-color: var(--ink); }
+
+/* for retailers: was black, now ivory with dark text */
+.retailers-section {
+    background: var(--ivory);
+    color: var(--ink);
+}
+
+.retailers-intro { color: var(--muted); }
+.retailer-benefits { background: var(--line); }
+.benefit { background: var(--card); }
+.benefit p { color: var(--muted); }
+
+.retailer-button {
+    border-color: var(--ink);
+    background: var(--ink);
+    color: var(--ivory);
+}
+
+.retailer-button:hover {
+    background: transparent;
+    color: var(--ink);
+}
+
+/* about + contact */
+.about-section { background: var(--cream); }
+.contact-section { background: var(--ivory); }
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    background: var(--card);
+    border-color: var(--line);
+    color: var(--ink);
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--ink);
+}
+
+.enquiry-form button {
+    border-color: var(--ink);
+    background: var(--ink);
+    color: var(--ivory);
+}
+
+.enquiry-form button:hover {
+    background: transparent;
+    color: var(--ink);
+}
+
+.form-success {
+    background: var(--card);
+    border-color: var(--line);
+}
+
+.form-success-icon { background: var(--ink); color: var(--ivory); }
+.form-success p { color: var(--muted); }
+
+/* footer: warm charcoal to anchor the page */
+.site-footer { background: #1F1C18; }
+
+@media (max-width: 768px) {
+
+    .nav-links {
+        background: var(--ivory);
+        border-bottom-color: var(--line);
+    }
+
+    .nav-links li {
+        border-bottom-color: var(--line);
+    }
+
+    .nav-toggle span {
+        background: var(--ink);
+    }
+}
+
+@media (max-width: 480px) {
+
+    .shape-picker {
+        gap: 6px;
+    }
+
+    .shape-option {
+        padding: 10px 2px 8px;
+        font-size: 8px;
+        letter-spacing: 0.5px;
+    }
+}

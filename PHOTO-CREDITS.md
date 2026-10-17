@@ -1,11 +1,11 @@
 # Photo credits
 
-All photos are from Unsplash (free to use under the Unsplash License: https://unsplash.com/license).
+Jewellery photos are from Unsplash (free to use under the Unsplash License: https://unsplash.com/license).
 They are stock images, not photos of SKY LAB DIAMONDS' own stock. Replace them with real product photos when available.
 
-## Diamonds (images/diamonds/)
-round.jpg, oval.jpg, emerald.jpg, pear.jpg — cropped from:
-https://unsplash.com/photos/iqD7nCuYFVM ("Diamonds of various shapes are on a black surface")
+## Diamonds (images/diamonds/*.webp)
+3D illustrations of the 10 diamond shapes, rendered specially for this website
+(not photographs, not stock images). Free to use; no credit required.
 
 ## Jewellery (images/jewellery/) — by Prahant Studio (https://unsplash.com/@prahantstudio)
 rings.jpg      https://unsplash.com/photos/_WM_7Ytiwk4
