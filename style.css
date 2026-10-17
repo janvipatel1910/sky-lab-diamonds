@@ -1953,6 +1953,8 @@ button {
 ========================================= */
 
 [data-theme="champagne"] {
+    --field-bg: #FFFFFF;
+    --field-line: #DCCFBF;
     --bg: #EAD9C6;         /* sand frame around the panels */
     --bg-alt: #FFFFFF;
     --card: #FFFFFF;
@@ -1970,91 +1972,207 @@ button {
 }
 
 /* light, elegant serif for headings */
-[data-theme="champagne"] h1,
-[data-theme="champagne"] h2,
-[data-theme="champagne"] h3,
-[data-theme="champagne"] .hero-content h1,
-[data-theme="champagne"] .section-heading h2,
-[data-theme="champagne"] .retailers-content > h2,
-[data-theme="champagne"] .contact-heading h2,
-[data-theme="champagne"] .about-heading h2,
-[data-theme="champagne"] .shape-info h3,
-[data-theme="champagne"] .jewellery-card h3,
-[data-theme="champagne"] .benefit h3,
-[data-theme="champagne"] .footer-brand h3,
-[data-theme="champagne"] .form-success h3 {
+[data-theme^="champagne"] h1,
+[data-theme^="champagne"] h2,
+[data-theme^="champagne"] h3,
+[data-theme^="champagne"] .hero-content h1,
+[data-theme^="champagne"] .section-heading h2,
+[data-theme^="champagne"] .retailers-content > h2,
+[data-theme^="champagne"] .contact-heading h2,
+[data-theme^="champagne"] .about-heading h2,
+[data-theme^="champagne"] .shape-info h3,
+[data-theme^="champagne"] .jewellery-card h3,
+[data-theme^="champagne"] .benefit h3,
+[data-theme^="champagne"] .footer-brand h3,
+[data-theme^="champagne"] .form-success h3 {
     font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
     font-weight: 500;
     letter-spacing: 0;
 }
 
-[data-theme="champagne"] .section-heading h2,
-[data-theme="champagne"] .retailers-content > h2,
-[data-theme="champagne"] .contact-heading h2 {
+[data-theme^="champagne"] .section-heading h2,
+[data-theme^="champagne"] .retailers-content > h2,
+[data-theme^="champagne"] .contact-heading h2 {
     font-size: clamp(38px, 4.4vw, 54px);
 }
 
-[data-theme="champagne"] body {
+[data-theme^="champagne"] body {
     font-weight: 300;
     color: var(--muted);
 }
 
 /* framed panels: each section sits on white with sand around it */
-[data-theme="champagne"] main > section:not(.hero-section) {
+[data-theme^="champagne"] main > section:not(.hero-section) {
     margin: 0 clamp(10px, 2.6vw, 36px) clamp(10px, 2.2vw, 28px);
     background: var(--panel);
 }
 
-[data-theme="champagne"] main > section.hero-section {
+[data-theme^="champagne"] main > section.hero-section {
     margin-bottom: clamp(10px, 2.2vw, 28px);
 }
 
 /* diamond section on soft champagne so the stones are clearly visible */
-[data-theme="champagne"] main > section.diamonds-section {
+[data-theme^="champagne"] main > section.diamonds-section {
     background:
         radial-gradient(ellipse 50% 60% at 28% 56%, var(--stage-glow), transparent 70%),
         var(--panel-soft);
 }
 
-[data-theme="champagne"] .jewellery-section,
-[data-theme="champagne"] .about-section {
+[data-theme^="champagne"] .jewellery-section,
+[data-theme^="champagne"] .about-section {
     background: var(--panel);
 }
 
-[data-theme="champagne"] .jewellery-card {
+[data-theme^="champagne"] .jewellery-card {
     background: var(--panel-soft);
 }
 
-[data-theme="champagne"] .benefit {
+[data-theme^="champagne"] .benefit {
     background: var(--panel-soft);
 }
 
-[data-theme="champagne"] .retailer-benefits {
+[data-theme^="champagne"] .retailer-benefits {
     background: var(--panel);
     gap: 14px;
 }
 
-[data-theme="champagne"] .form-group input,
-[data-theme="champagne"] .form-group select,
-[data-theme="champagne"] .form-group textarea {
-    background: #FFFFFF;
-    border-color: #DCCFBF;
+[data-theme^="champagne"] .form-group input,
+[data-theme^="champagne"] .form-group select,
+[data-theme^="champagne"] .form-group textarea {
+    background: var(--field-bg);
+    border-color: var(--field-line);
 }
 
-[data-theme="champagne"] .shape-option.is-active {
-    background: #FFFFFF;
+[data-theme^="champagne"] .shape-option.is-active {
+    background: var(--field-bg);
 }
 
-[data-theme="champagne"] .site-footer {
+[data-theme^="champagne"] .site-footer {
     margin: 0 clamp(10px, 2.6vw, 36px) clamp(10px, 2.6vw, 36px);
 }
 
 @media (max-width: 768px) {
-    [data-theme="champagne"] main > section:not(.hero-section) {
+    [data-theme^="champagne"] main > section:not(.hero-section) {
         margin: 0 8px 8px;
     }
 
-    [data-theme="champagne"] .site-footer {
+    [data-theme^="champagne"] .site-footer {
         margin: 0 8px 8px;
     }
+}
+
+
+/* =========================================
+   DARK VERSION OF THE CHAMPAGNE THEME
+========================================= */
+
+[data-theme="champagne-dark"] {
+    --bg: #14120F;         /* espresso frame */
+    --bg-alt: #1D1A16;
+    --card: #1D1A16;
+    --panel: #1D1A16;
+    --panel-soft: #25211C;
+    --ink: #F1EAE0;
+    --muted: #A8A196;
+    --line: #34302A;
+    --accent: #C9A877;     /* champagne gold */
+    --btn-bg: #F1EAE0;
+    --btn-fg: #1D1A16;
+    --footer: #0C0B09;
+    --field-bg: #14120F;
+    --field-line: #3A352E;
+    --stage-glow: rgba(255, 236, 205, 0.09);
+    --stage-shadow: rgba(0, 0, 0, 0.6);
+    color-scheme: dark;
+}
+
+[data-theme="champagne-dark"] .footer-bottom {
+    border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+[data-theme="champagne-dark"] .form-error {
+    background: #2A1715;
+    border-color: #8E3A30;
+    color: #F2C4BD;
+}
+
+/* -------------------------
+   THEME TOGGLE BUTTON
+-------------------------- */
+
+.navbar { justify-content: flex-start; }
+.nav-links { margin-left: auto; }
+
+.theme-toggle {
+    order: 3;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+    margin-left: 26px;
+
+    border: 1px solid color-mix(in srgb, var(--ink) 30%, transparent);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--ink);
+    cursor: pointer;
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background: var(--ink);
+    color: var(--bg);
+    border-color: var(--ink);
+}
+
+.theme-toggle:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 3px;
+}
+
+.theme-toggle svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* show the moon in light mode (switch to dark), the sun in dark mode */
+.theme-toggle .icon-sun { display: none; }
+[data-theme="champagne-dark"] .theme-toggle .icon-sun { display: block; }
+[data-theme="champagne-dark"] .theme-toggle .icon-moon { display: none; }
+
+/* smooth colour change when switching */
+body,
+.navbar,
+main > section,
+.site-footer,
+.jewellery-card,
+.benefit,
+.shape-option,
+.form-group input,
+.form-group select,
+.form-group textarea {
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+@media (max-width: 768px) {
+    .theme-toggle {
+        order: 2;
+        margin-left: auto;
+        margin-right: 6px;
+        width: 38px;
+        height: 38px;
+    }
+
+    .nav-toggle { order: 3; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body, .navbar, main > section, .site-footer { transition: none; }
 }

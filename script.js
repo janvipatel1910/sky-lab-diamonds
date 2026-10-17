@@ -263,3 +263,30 @@ if (navToggle && navLinks) {
         if (!e.target.closest(".navbar")) setMenu(false);
     });
 }
+
+
+
+/* -------------------------
+   5. LIGHT / DARK THEME TOGGLE
+-------------------------- */
+
+const themeToggle = document.getElementById("theme-toggle");
+
+if (themeToggle) {
+    const root = document.documentElement;
+
+    function updateToggle() {
+        const dark = root.getAttribute("data-theme") === "champagne-dark";
+        themeToggle.setAttribute("aria-pressed", dark);
+        themeToggle.setAttribute("aria-label", dark ? "Switch to light theme" : "Switch to dark theme");
+    }
+
+    themeToggle.addEventListener("click", () => {
+        const dark = root.getAttribute("data-theme") !== "champagne-dark";
+        root.setAttribute("data-theme", dark ? "champagne-dark" : "champagne");
+        try { localStorage.setItem("skylab-theme", dark ? "dark" : "light"); } catch (e) {}
+        updateToggle();
+    });
+
+    updateToggle();
+}
