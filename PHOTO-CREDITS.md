@@ -11,7 +11,7 @@ They are stock images, not photos of SKY LAB DIAMONDS' own stock. Replace them w
 rings.jpg      https://unsplash.com/photos/_WM_7Ytiwk4
 earrings.jpg   https://unsplash.com/photos/8bJKF2famIk
 necklaces.jpg  https://unsplash.com/photos/1_bPdO6KyaI
-bracelets.jpg  https://unsplash.com/photos/shh7Df--U4o
+bracelets.jpg  sameer Ali  https://unsplash.com/photos/a-diamond-bracelet-on-a-black-surface-2nAZaWAFkSo
 bespoke.jpg    https://unsplash.com/photos/3OUdX61uPH4
 
 ## Jewellery gallery photos (images/jewellery/gallery/) - Unsplash, free under the Unsplash License
@@ -34,7 +34,7 @@ bracelets-1  Sabrianna                  https://unsplash.com/photos/gold-and-sil
 bracelets-2  Michael Myers              https://unsplash.com/photos/a-diamond-bracelet-on-a-black-background-10eeEq7OxSI
 bracelets-3  mansi shah                 https://unsplash.com/photos/a-close-up-of-a-bracelet-with-flowers-on-it-Ntbbj7eOxJg
 bracelets-4  Giustina Barison           https://unsplash.com/photos/a-diamond-bracelet-on-a-womans-wrist-yc8hHj3KqXA
-bracelets-5  Khizar Rathore             https://unsplash.com/photos/a-couple-of-bracelets-sitting-on-top-of-a-table-AoZrJQ80KCc
+bracelets-5  Carlos Esteves             https://unsplash.com/photos/silver-colored-accessory-with-clear-gemstones-on-black-surface-1MWbwTaeJIA
 bespoke-1    Kumpan Electric            https://unsplash.com/photos/person-writing-on-white-paper-kSBWIerVYJs
 bespoke-2    Munbaik Cycling Clothing   https://unsplash.com/photos/white-printer-paper-with-black-pen-cei9HTZuNQE
 bespoke-3    Kwami Fattah Al Sissi      https://unsplash.com/photos/artist-drawing-intricate-design-on-paper-with-pen-a6sTqvcnM50
