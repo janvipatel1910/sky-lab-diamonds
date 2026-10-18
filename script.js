@@ -300,7 +300,8 @@ const GALLERIES = {
     rings:     { title: "Rings",                  item: "Lab-grown diamond rings",                  type: "jewellery" },
     earrings:  { title: "Earrings",               item: "Lab-grown diamond earrings",               type: "jewellery" },
     necklaces: { title: "Necklaces & Pendants",   item: "Lab-grown diamond necklaces & pendants",   type: "jewellery" },
-    bracelets: { title: "Bracelets & Bangles",    item: "Lab-grown diamond bracelets & bangles",    type: "jewellery" },
+    bracelets: { title: "Bracelets",              item: "Lab-grown diamond bracelets",              type: "jewellery" },
+    bangles:   { title: "Bangles",                item: "Lab-grown diamond bangles",                type: "jewellery" },
     bespoke:   { title: "Bespoke Jewellery",      item: "Bespoke jewellery",                        type: "bespoke"   }
 };
 

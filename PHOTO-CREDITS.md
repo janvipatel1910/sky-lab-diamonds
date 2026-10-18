@@ -40,3 +40,9 @@ bespoke-2    Munbaik Cycling Clothing   https://unsplash.com/photos/white-printe
 bespoke-3    Kwami Fattah Al Sissi      https://unsplash.com/photos/artist-drawing-intricate-design-on-paper-with-pen-a6sTqvcnM50
 bespoke-4    Tahlia Doyle               https://unsplash.com/photos/silver-ring-on-persons-finger-e_vZmriImrE
 bespoke-5    Tahlia Doyle               https://unsplash.com/photos/fire-in-close-up-photography-R5wsYX-xEZI
+bangles.jpg  (original card photo) Prahant Studio  https://unsplash.com/photos/shh7Df--U4o
+bangles-1    Sanjay Jain                https://unsplash.com/photos/a-couple-of-rings-sitting-on-top-of-a-wooden-table-bq_zoh2mTNQ
+bangles-2    Imam Kurniawan             https://unsplash.com/photos/a-gold-ring-on-a-white-surface-qoGdi3R3ekQ
+bangles-3    mansi shah                 https://unsplash.com/photos/a-pair-of-gold-and-silver-bracelets-sitting-on-top-of-a-book-cDcAmSCru9E
+bangles-4    Zayed Ahmed Zadu           https://unsplash.com/photos/gold-and-silver-bangle-on-charcoal-4Tbl_UUNltM
+bangles-5    Khizar Rathore             https://unsplash.com/photos/a-couple-of-bracelets-sitting-on-top-of-a-table-AoZrJQ80KCc
