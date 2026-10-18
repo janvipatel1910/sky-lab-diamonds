@@ -290,3 +290,128 @@ if (themeToggle) {
 
     updateToggle();
 }
+
+
+/* -------------------------
+   6. JEWELLERY GALLERY
+-------------------------- */
+
+const GALLERIES = {
+    rings:     { title: "Rings",                  item: "Lab-grown diamond rings",                  type: "jewellery" },
+    earrings:  { title: "Earrings",               item: "Lab-grown diamond earrings",               type: "jewellery" },
+    necklaces: { title: "Necklaces & Pendants",   item: "Lab-grown diamond necklaces & pendants",   type: "jewellery" },
+    bracelets: { title: "Bracelets & Bangles",    item: "Lab-grown diamond bracelets & bangles",    type: "jewellery" },
+    bespoke:   { title: "Bespoke Jewellery",      item: "Bespoke jewellery",                        type: "bespoke"   }
+};
+
+// photo list for each category: the main card photo first, then 5 gallery photos
+function galleryPhotos(slug) {
+    const photos = [{ full: `images/jewellery/${slug}.jpg`, thumb: `images/jewellery/gallery/${slug}-0-thumb.webp` }];
+    for (let n = 1; n <= 5; n++) {
+        photos.push({
+            full: `images/jewellery/gallery/${slug}-${n}.webp`,
+            thumb: `images/jewellery/gallery/${slug}-${n}-thumb.webp`
+        });
+    }
+    return photos;
+}
+
+const gallery = document.getElementById("gallery");
+
+if (gallery) {
+    const gImg = document.getElementById("gallery-image");
+    const gTitle = document.getElementById("gallery-title");
+    const gCount = document.getElementById("gallery-count");
+    const gThumbs = document.getElementById("gallery-thumbs");
+    const gEnquire = document.getElementById("gallery-enquire");
+    let photos = [];
+    let index = 0;
+    let current = null;
+    let opener = null;
+
+    function showPhoto(i) {
+        index = (i + photos.length) % photos.length;
+        gImg.classList.add("is-loading");
+        gImg.onload = () => gImg.classList.remove("is-loading");
+        gImg.src = photos[index].full;
+        gImg.alt = `${current.title}: photo ${index + 1} of ${photos.length}`;
+        gCount.textContent = `${index + 1} / ${photos.length}`;
+        gThumbs.querySelectorAll("button").forEach((b, k) => {
+            b.setAttribute("aria-current", k === index ? "true" : "false");
+        });
+        // preload the next photo
+        new Image().src = photos[(index + 1) % photos.length].full;
+    }
+
+    function openGallery(slug, button) {
+        current = GALLERIES[slug];
+        if (!current) return;
+        opener = button;
+        photos = galleryPhotos(slug);
+
+        gTitle.textContent = current.title;
+        gEnquire.textContent = `Request ${current.title} Price`;
+        gEnquire.dataset.enquiryItem = current.item;
+        gEnquire.dataset.enquiryType = current.type;
+
+        gThumbs.innerHTML = "";
+        photos.forEach((p, k) => {
+            const b = document.createElement("button");
+            b.type = "button";
+            b.setAttribute("aria-label", `Show photo ${k + 1}`);
+            b.innerHTML = `<img src="${p.thumb}" alt="" loading="lazy">`;
+            b.addEventListener("click", () => showPhoto(k));
+            gThumbs.appendChild(b);
+        });
+
+        gallery.hidden = false;
+        document.body.classList.add("gallery-is-open");
+        showPhoto(0);
+        gallery.querySelector(".gallery-close").focus();
+    }
+
+    function closeGallery() {
+        gallery.hidden = true;
+        document.body.classList.remove("gallery-is-open");
+        if (opener) opener.focus({ preventScroll: true });
+    }
+
+    document.querySelectorAll(".gallery-open").forEach((btn) => {
+        btn.addEventListener("click", () => openGallery(btn.dataset.gallery, btn));
+    });
+
+    gallery.querySelectorAll("[data-gallery-close]").forEach((el) => el.addEventListener("click", closeGallery));
+    gallery.querySelector(".gallery-prev").addEventListener("click", () => showPhoto(index - 1));
+    gallery.querySelector(".gallery-next").addEventListener("click", () => showPhoto(index + 1));
+
+    // "Request price" closes the gallery; the form pre-fill (section 2) also runs
+    gEnquire.addEventListener("click", () => {
+        gallery.hidden = true;
+        document.body.classList.remove("gallery-is-open");
+    });
+
+    document.addEventListener("keydown", (e) => {
+        if (gallery.hidden) return;
+        if (e.key === "Escape") closeGallery();
+        if (e.key === "ArrowRight") showPhoto(index + 1);
+        if (e.key === "ArrowLeft") showPhoto(index - 1);
+        // keep keyboard focus inside the gallery
+        if (e.key === "Tab") {
+            const f = [...gallery.querySelectorAll("button, a[href]")].filter((el) => el.offsetParent !== null);
+            if (!f.length) return;
+            if (e.shiftKey && document.activeElement === f[0]) { e.preventDefault(); f[f.length - 1].focus(); }
+            else if (!e.shiftKey && document.activeElement === f[f.length - 1]) { e.preventDefault(); f[0].focus(); }
+        }
+    });
+
+    // swipe on phones
+    let sx = null;
+    const main = gallery.querySelector(".gallery-main");
+    main.addEventListener("touchstart", (e) => { sx = e.touches[0].clientX; }, { passive: true });
+    main.addEventListener("touchend", (e) => {
+        if (sx === null) return;
+        const d = e.changedTouches[0].clientX - sx;
+        if (Math.abs(d) > 40) showPhoto(index + (d < 0 ? 1 : -1));
+        sx = null;
+    });
+}
