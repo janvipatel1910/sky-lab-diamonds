@@ -2749,9 +2749,9 @@ body.gallery-is-open { overflow: hidden; }
 .hero-spin {
     position: absolute;
     z-index: 1;
-    right: 6%;
+    right: 9%;
     top: 50%;
-    width: min(44vw, 600px);
+    width: min(28vw, 400px);
     transform: translateY(-50%);
     pointer-events: none;
 }
@@ -2796,7 +2796,7 @@ body.gallery-is-open { overflow: hidden; }
     .hero-spin {
         right: 50%;
         top: 6%;
-        width: min(78vw, 360px);
+        width: min(55vw, 240px);
         transform: translateX(50%);
     }
 }
