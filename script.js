@@ -416,3 +416,146 @@ if (gallery) {
         sx = null;
     });
 }
+
+
+/* -------------------------
+   7. DIAMOND SIZE GUIDE
+   Typical length x width in mm for a 1.00 ct stone (approximate).
+   Size grows with the cube root of carat weight.
+-------------------------- */
+
+const SIZE_1CT = {
+    round:    [6.4, 6.4],
+    oval:     [7.7, 5.7],
+    emerald:  [7.0, 5.0],
+    pear:     [8.5, 5.5],
+    princess: [5.5, 5.5],
+    radiant:  [6.5, 5.2],
+    marquise: [10.0, 5.0],
+    heart:    [6.5, 7.0],
+    cushion:  [6.0, 5.6],
+    trillion: [6.7, 7.5]
+};
+
+const sizeSection = document.getElementById("size-guide");
+
+if (sizeSection) {
+    const slider = document.getElementById("size-carat");
+    const coin = document.getElementById("size-coin");
+    const img = document.getElementById("size-diamond");
+    const box = document.getElementById("size-diamond-box");
+    const ctOut = document.getElementById("size-ct");
+    const mmOut = document.getElementById("size-mm");
+    const caption = document.getElementById("size-caption");
+    const buttons = sizeSection.querySelectorAll(".size-shape");
+    let shape = "round";
+
+    function pxPerMm() {
+        return window.innerWidth < 600 ? 8.5 : 12;
+    }
+
+    function updateSize() {
+        const ct = parseFloat(slider.value);
+        const f = Math.cbrt(ct);
+        const [L, W] = SIZE_1CT[shape];
+        const len = L * f, wid = W * f;
+        const k = pxPerMm();
+
+        coin.style.width = coin.style.height = `${20.3 * k}px`;
+
+        // the diamond image's longest side fills about 92.6% of the picture
+        const side = (Math.max(len, wid) * k) / 0.926;
+        img.style.width = img.style.height = `${side}px`;
+        box.style.width = box.style.height = `${Math.max(side, 1)}px`;
+
+        const name = shape.charAt(0).toUpperCase() + shape.slice(1);
+        ctOut.textContent = `${ct.toFixed(2)} ct`;
+        mmOut.textContent = shape === "round"
+            ? `approx. ${len.toFixed(1)} mm across`
+            : `approx. ${len.toFixed(1)} × ${wid.toFixed(1)} mm`;
+        caption.textContent = `${name} · ${ct.toFixed(2)} ct`;
+        slider.setAttribute("aria-valuetext", `${ct.toFixed(2)} carats, ${mmOut.textContent}`);
+    }
+
+    buttons.forEach((b) => {
+        b.addEventListener("click", () => {
+            shape = b.dataset.shape;
+            buttons.forEach((x) => {
+                x.classList.toggle("is-active", x === b);
+                x.setAttribute("aria-pressed", x === b);
+            });
+            img.src = `images/diamonds/${shape}.webp`;
+            updateSize();
+        });
+    });
+
+    slider.addEventListener("input", updateSize);
+    window.addEventListener("resize", updateSize);
+    updateSize();
+}
+
+
+/* -------------------------
+   8. QUICK QUOTE BUILDER
+-------------------------- */
+
+const qb = document.getElementById("quote-builder");
+
+if (qb) {
+    const preview = document.getElementById("qb-preview");
+    const qty = document.getElementById("qb-qty");
+    const done = document.getElementById("qb-done");
+
+    function choices() {
+        const out = {};
+        qb.querySelectorAll(".qb-group[data-field]").forEach((g) => {
+            const active = g.querySelector(".qb-chip.is-active");
+            out[g.dataset.field] = active ? active.dataset.value : "";
+        });
+        out.Quantity = Math.max(1, parseInt(qty.value, 10) || 1);
+        return out;
+    }
+
+    function updatePreview() {
+        const c = choices();
+        preview.textContent = `${c.Shape} · ${c.Carat} · ${c.Colour} · ${c.Clarity} · ${c.Certificate} certificate · Qty ${c.Quantity}`;
+        done.hidden = true;
+    }
+
+    qb.querySelectorAll(".qb-group[data-field]").forEach((g) => {
+        g.querySelectorAll(".qb-chip").forEach((chip) => {
+            chip.addEventListener("click", () => {
+                g.querySelectorAll(".qb-chip").forEach((x) => {
+                    x.classList.toggle("is-active", x === chip);
+                    x.setAttribute("aria-pressed", x === chip);
+                });
+                updatePreview();
+            });
+        });
+    });
+
+    qty.addEventListener("input", updatePreview);
+
+    document.getElementById("qb-add").addEventListener("click", () => {
+        const c = choices();
+        const line = `- ${c.Quantity} x ${c.Shape}, ${c.Carat}, colour ${c.Colour}, clarity ${c.Clarity}, certificate: ${c.Certificate}`;
+        const message = document.getElementById("message");
+        const select = document.getElementById("enquiry-type");
+
+        if (select && !select.value) select.value = "diamonds";
+
+        const header = "Diamond requirements:";
+        const text = message.value.trim();
+        if (text.includes(header)) {
+            message.value = `${text}\n${line}`;
+        } else {
+            message.value = text ? `${text}\n\n${header}\n${line}` : `${header}\n${line}`;
+        }
+
+        done.hidden = false;
+        form && form.classList.add("is-prefilled");
+        setTimeout(() => form && form.classList.remove("is-prefilled"), 2500);
+    });
+
+    updatePreview();
+}

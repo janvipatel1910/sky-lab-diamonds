@@ -57,6 +57,7 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#jewellery">Jewellery</a></li>
                 <li><a href="#diamonds">Diamonds</a></li>
+                <li><a href="#size-guide">Size Guide</a></li>
                 <li><a href="#retailers">For Retailers</a></li>
                 <li><a href="#about">About Us</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -70,6 +71,12 @@
 <section id="home" class="hero-section">
 
     <div class="hero-overlay"></div>
+
+    <!-- 360° spinning diamond (still image for visitors who prefer reduced motion) -->
+    <picture class="hero-spin" aria-hidden="true">
+        <source srcset="images/hero-diamond-still.webp" media="(prefers-reduced-motion: reduce)">
+        <img src="images/hero-diamond-spin.webp" alt="" width="640" height="640" fetchpriority="high">
+    </picture>
 
     <div class="hero-content">
         <span class="hero-eyebrow">UK-BASED TRADE SUPPLIER</span>
@@ -277,6 +284,123 @@
 
 <!-- 👆 DIAMONDS SECTION ENDS HERE 👆 -->
 
+<!-- DIAMOND SIZE VISUALISER -->
+<section id="size-guide" class="size-section">
+
+    <div class="section-heading">
+        <span>SIZE GUIDE</span>
+        <h2>See the Size</h2>
+        <p>
+            Choose a shape and carat weight to see its approximate size,
+            shown to scale next to a UK 1p coin.
+        </p>
+    </div>
+
+    <div class="size-layout">
+
+        <div class="size-controls">
+            <p class="size-label" id="size-shape-label">Shape</p>
+            <div class="size-shapes" role="group" aria-labelledby="size-shape-label">
+                <button type="button" class="size-shape is-active" data-shape="round" aria-pressed="true">Round</button>
+                <button type="button" class="size-shape" data-shape="oval" aria-pressed="false">Oval</button>
+                <button type="button" class="size-shape" data-shape="emerald" aria-pressed="false">Emerald</button>
+                <button type="button" class="size-shape" data-shape="pear" aria-pressed="false">Pear</button>
+                <button type="button" class="size-shape" data-shape="princess" aria-pressed="false">Princess</button>
+                <button type="button" class="size-shape" data-shape="radiant" aria-pressed="false">Radiant</button>
+                <button type="button" class="size-shape" data-shape="marquise" aria-pressed="false">Marquise</button>
+                <button type="button" class="size-shape" data-shape="heart" aria-pressed="false">Heart</button>
+                <button type="button" class="size-shape" data-shape="cushion" aria-pressed="false">Cushion</button>
+                <button type="button" class="size-shape" data-shape="trillion" aria-pressed="false">Trillion</button>
+            </div>
+
+            <label class="size-label" for="size-carat">Carat weight</label>
+            <input type="range" id="size-carat" min="0.25" max="5" step="0.25" value="1">
+
+            <div class="size-readout" aria-live="polite">
+                <strong id="size-ct">1.00 ct</strong>
+                <span id="size-mm">approx. 6.4 × 6.4 mm</span>
+            </div>
+
+            <p class="size-note">
+                Sizes are typical approximations. Actual dimensions vary with each
+                stone's cut proportions.
+            </p>
+        </div>
+
+        <div class="size-stage" aria-hidden="true">
+            <div class="size-item">
+                <div class="size-coin" id="size-coin"><span>1p</span></div>
+                <span class="size-caption">UK 1p coin · 20.3 mm</span>
+            </div>
+            <div class="size-item">
+                <div class="size-diamond-box" id="size-diamond-box">
+                    <img id="size-diamond" src="images/diamonds/round.webp" alt="">
+                </div>
+                <span class="size-caption" id="size-caption">Round · 1.00 ct</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- LAB-GROWN VS MINED GUIDE -->
+<section id="lab-vs-mined" class="compare-section">
+
+    <div class="section-heading">
+        <span>THE FACTS</span>
+        <h2>Lab-Grown vs Mined</h2>
+        <p>
+            Both are real diamonds. The difference is where they come from.
+        </p>
+    </div>
+
+    <div class="compare-table" role="table" aria-label="Lab-grown and mined diamonds compared">
+        <div class="compare-row compare-head" role="row">
+            <span role="columnheader"></span>
+            <span role="columnheader">Lab-grown diamond</span>
+            <span role="columnheader">Mined diamond</span>
+        </div>
+        <div class="compare-row" role="row">
+            <span role="rowheader">What it is</span>
+            <span role="cell">Real diamond: crystallised carbon</span>
+            <span role="cell">Real diamond: crystallised carbon</span>
+        </div>
+        <div class="compare-row" role="row">
+            <span role="rowheader">Hardness and sparkle</span>
+            <span role="cell">Same hardness (10 on the Mohs scale), same brilliance and fire</span>
+            <span role="cell">Same hardness (10 on the Mohs scale), same brilliance and fire</span>
+        </div>
+        <div class="compare-row" role="row">
+            <span role="rowheader">How it forms</span>
+            <span role="cell">Grown in weeks in a laboratory, using the HPHT or CVD process</span>
+            <span role="cell">Formed deep underground over millions of years, then mined</span>
+        </div>
+        <div class="compare-row" role="row">
+            <span role="rowheader">Grading</span>
+            <span role="cell">Graded on the 4Cs by independent labs such as IGI and GIA</span>
+            <span role="cell">Graded on the 4Cs by independent labs such as IGI and GIA</span>
+        </div>
+        <div class="compare-row" role="row">
+            <span role="rowheader">Telling them apart</span>
+            <span role="cell">Not by eye. Gem labs use specialist equipment; certificates state "laboratory-grown"</span>
+            <span role="cell">Not by eye. Gem labs use specialist equipment to confirm natural origin</span>
+        </div>
+        <div class="compare-row" role="row">
+            <span role="rowheader">Price</span>
+            <span role="cell">Typically much lower than a mined diamond of similar size and grade</span>
+            <span role="cell">Higher, reflecting rarity and the cost of mining</span>
+        </div>
+        <div class="compare-row" role="row">
+            <span role="rowheader">Supply for retailers</span>
+            <span role="cell">Consistent sizes and matching stones can be sourced to order</span>
+            <span role="cell">Depends on what is mined and available</span>
+        </div>
+    </div>
+
+</section>
+
+
 
 <section id="retailers" class="retailers-section">
 
@@ -377,6 +501,82 @@
         </p>
     </div>
 
+
+    <div class="quote-builder" id="quote-builder">
+        <h3>Build your diamond enquiry</h3>
+        <p class="qb-intro">Pick what you need and we'll add it to your enquiry below.</p>
+
+        <div class="qb-grid">
+            <div class="qb-group" data-field="Shape">
+                <p class="qb-label">Shape</p>
+                <div class="qb-chips">
+                    <button type="button" class="qb-chip is-active" data-value="Round" aria-pressed="true">Round</button>
+                    <button type="button" class="qb-chip" data-value="Oval" aria-pressed="false">Oval</button>
+                    <button type="button" class="qb-chip" data-value="Emerald" aria-pressed="false">Emerald</button>
+                    <button type="button" class="qb-chip" data-value="Pear" aria-pressed="false">Pear</button>
+                    <button type="button" class="qb-chip" data-value="Princess" aria-pressed="false">Princess</button>
+                    <button type="button" class="qb-chip" data-value="Radiant" aria-pressed="false">Radiant</button>
+                    <button type="button" class="qb-chip" data-value="Marquise" aria-pressed="false">Marquise</button>
+                    <button type="button" class="qb-chip" data-value="Heart" aria-pressed="false">Heart</button>
+                    <button type="button" class="qb-chip" data-value="Cushion" aria-pressed="false">Cushion</button>
+                    <button type="button" class="qb-chip" data-value="Trillion" aria-pressed="false">Trillion</button>
+                </div>
+            </div>
+
+            <div class="qb-group" data-field="Carat">
+                <p class="qb-label">Carat weight</p>
+                <div class="qb-chips">
+                    <button type="button" class="qb-chip" data-value="Under 0.50 ct" aria-pressed="false">Under 0.50 ct</button>
+                    <button type="button" class="qb-chip" data-value="0.50 – 0.99 ct" aria-pressed="false">0.50 – 0.99 ct</button>
+                    <button type="button" class="qb-chip is-active" data-value="1.00 – 1.49 ct" aria-pressed="true">1.00 – 1.49 ct</button>
+                    <button type="button" class="qb-chip" data-value="1.50 – 1.99 ct" aria-pressed="false">1.50 – 1.99 ct</button>
+                    <button type="button" class="qb-chip" data-value="2.00 – 2.99 ct" aria-pressed="false">2.00 – 2.99 ct</button>
+                    <button type="button" class="qb-chip" data-value="3.00 ct +" aria-pressed="false">3.00 ct +</button>
+                </div>
+            </div>
+
+            <div class="qb-group" data-field="Colour">
+                <p class="qb-label">Colour</p>
+                <div class="qb-chips">
+                    <button type="button" class="qb-chip is-active" data-value="D – F (colourless)" aria-pressed="true">D – F (colourless)</button>
+                    <button type="button" class="qb-chip" data-value="G – H (near colourless)" aria-pressed="false">G – H (near colourless)</button>
+                    <button type="button" class="qb-chip" data-value="I – J" aria-pressed="false">I – J</button>
+                    <button type="button" class="qb-chip" data-value="Fancy colour" aria-pressed="false">Fancy colour</button>
+                </div>
+            </div>
+
+            <div class="qb-group" data-field="Clarity">
+                <p class="qb-label">Clarity</p>
+                <div class="qb-chips">
+                    <button type="button" class="qb-chip" data-value="FL – IF" aria-pressed="false">FL – IF</button>
+                    <button type="button" class="qb-chip" data-value="VVS1 – VVS2" aria-pressed="false">VVS1 – VVS2</button>
+                    <button type="button" class="qb-chip is-active" data-value="VS1 – VS2" aria-pressed="true">VS1 – VS2</button>
+                    <button type="button" class="qb-chip" data-value="SI1 – SI2" aria-pressed="false">SI1 – SI2</button>
+                </div>
+            </div>
+
+            <div class="qb-group" data-field="Certificate">
+                <p class="qb-label">Certificate</p>
+                <div class="qb-chips">
+                    <button type="button" class="qb-chip is-active" data-value="IGI" aria-pressed="true">IGI</button>
+                    <button type="button" class="qb-chip" data-value="GIA" aria-pressed="false">GIA</button>
+                    <button type="button" class="qb-chip" data-value="Either" aria-pressed="false">Either</button>
+                    <button type="button" class="qb-chip" data-value="Not needed" aria-pressed="false">Not needed</button>
+                </div>
+            </div>
+
+            <div class="qb-group">
+                <label class="qb-label" for="qb-qty">Quantity (stones)</label>
+                <input type="number" id="qb-qty" min="1" max="10000" value="1" inputmode="numeric">
+            </div>
+        </div>
+
+        <div class="qb-summary">
+            <p id="qb-preview">Round · 1.00 – 1.49 ct · D – F (colourless) · VS1 – VS2 · IGI · Qty 1</p>
+            <button type="button" class="qb-add" id="qb-add">Add to my enquiry</button>
+        </div>
+        <p class="qb-done" id="qb-done" role="status" hidden>Added to your enquiry below. Add another or send the form.</p>
+    </div>
 
    <form
     class="enquiry-form"
