@@ -46,3 +46,10 @@ bangles-2    Imam Kurniawan             https://unsplash.com/photos/a-gold-ring-
 bangles-3    mansi shah                 https://unsplash.com/photos/a-pair-of-gold-and-silver-bracelets-sitting-on-top-of-a-book-cDcAmSCru9E
 bangles-4    Zayed Ahmed Zadu           https://unsplash.com/photos/gold-and-silver-bangle-on-charcoal-4Tbl_UUNltM
 bangles-5    Khizar Rathore             https://unsplash.com/photos/a-couple-of-bracelets-sitting-on-top-of-a-table-AoZrJQ80KCc
+
+## Top banner slideshow (images/hero/) - Unsplash, free under the Unsplash License
+hero-1-necklace     The Cleveland Museum of Art  https://unsplash.com/photos/diamond-and-pearl-necklace-with-intricate-pendant-GkTLP8m-qjI
+hero-2-bridal-set   The Cleveland Museum of Art  https://unsplash.com/photos/ornate-pearl-and-diamond-necklace-with-matching-earrings-and-pendant-2BYXjDSVtlc
+hero-3-tiara        parisa safaei                https://unsplash.com/photos/a-tiara-on-a-black-cloth-with-a-black-background-dPVr46TJbPc
+hero-4-brooch       parisa safaei                https://unsplash.com/photos/a-close-up-of-a-brooch-on-a-black-cloth-b2phn4twtZ4
+hero-5-earrings     MAYANK GEHLOT                https://unsplash.com/photos/gold-and-silver-ring-on-black-surface-lsxBmX8Hmwc
