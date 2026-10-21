@@ -2819,3 +2819,61 @@ body.gallery-is-open { overflow: hidden; }
         padding: 11%;
     }
 }
+
+
+/* =========================================
+   HERO: JEWELLERY SHOWCASE (replaces the spinning diamond)
+   Four photos on black backgrounds fade into each other.
+========================================= */
+
+.hero-showcase {
+    position: absolute;
+    z-index: 1;
+    right: 5%;
+    top: 50%;
+    width: min(46vw, 640px);
+    aspect-ratio: 4 / 3;
+    transform: translateY(-50%);
+    pointer-events: none;
+
+    /* soften the photo edges into the black banner */
+    -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 45%, transparent 100%);
+    mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 45%, transparent 100%);
+}
+
+.hero-showcase img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    animation: hero-fade 24s infinite;
+}
+
+.hero-showcase img:nth-child(1) { animation-delay: 0s; }
+.hero-showcase img:nth-child(2) { animation-delay: 6s; }
+.hero-showcase img:nth-child(3) { animation-delay: 12s; }
+.hero-showcase img:nth-child(4) { animation-delay: 18s; }
+
+@keyframes hero-fade {
+    0%   { opacity: 0; transform: scale(1.06); }
+    5%   { opacity: 1; }
+    25%  { opacity: 1; }
+    31%  { opacity: 0; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1); }
+}
+
+@media (max-width: 768px) {
+    .hero-showcase {
+        right: 50%;
+        top: 3%;
+        width: min(94vw, 440px);
+        transform: translateX(50%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-showcase img { animation: none; }
+    .hero-showcase img:first-child { opacity: 1; }
+}
