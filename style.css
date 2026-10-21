@@ -2800,3 +2800,22 @@ body.gallery-is-open { overflow: hidden; }
         transform: translateX(50%);
     }
 }
+
+
+/* =========================================
+   DIAMOND EXPLORER: keep the stone sharp
+   Show the diamond no larger than its real image resolution,
+   so Retina screens don't have to stretch (blur) it.
+========================================= */
+
+[data-theme] .shape-stage img,
+.shape-stage img {
+    padding: 13%;
+}
+
+@media (max-width: 900px) {
+    [data-theme] .shape-stage img,
+    .shape-stage img {
+        padding: 11%;
+    }
+}
