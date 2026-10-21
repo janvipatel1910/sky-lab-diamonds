@@ -2872,7 +2872,32 @@ body.gallery-is-open { overflow: hidden; }
 @media (prefers-reduced-motion: reduce) {
     .hero-showcase img { transform: none; transition: opacity 0.9s ease; }
 }
-    20%  { opacity: 1; }
-    25%  { opacity: 0; }
-    100% { opacity: 0; }
+
+
+/* =========================================
+   MOBILE: jewellery photos sit above the text (no overlap)
+========================================= */
+
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        min-height: auto;
+        padding-top: 24px;
+    }
+
+    .hero-showcase {
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: none;
+        width: 100%;
+        max-width: 440px;
+        margin: 0 auto 28px;
+    }
+
+    .hero-overlay {
+        background: none;
+    }
 }
