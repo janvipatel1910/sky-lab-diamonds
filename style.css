@@ -2849,7 +2849,7 @@ body.gallery-is-open { overflow: hidden; }
     object-fit: cover;
     opacity: 0;
     transform: scale(1.05);
-    transition: opacity 1.4s ease, transform 7s ease-out;
+    transition: opacity 0.9s ease, transform 3.5s ease-out;
 }
 
 /* the photo currently on show (first photo is shown even without JavaScript) */
@@ -2870,7 +2870,7 @@ body.gallery-is-open { overflow: hidden; }
 
 /* Reduce motion: keep the gentle fade, but no zoom movement */
 @media (prefers-reduced-motion: reduce) {
-    .hero-showcase img { transform: none; transition: opacity 1.4s ease; }
+    .hero-showcase img { transform: none; transition: opacity 0.9s ease; }
 }
     20%  { opacity: 1; }
     25%  { opacity: 0; }

@@ -564,7 +564,7 @@ if (qb) {
 
 /* -------------------------
    9. TOP BANNER JEWELLERY SLIDESHOW
-   Shows the next photo every 6 seconds.
+   Shows the next photo every 3 seconds.
 -------------------------- */
 
 const showcase = document.querySelector(".hero-showcase");
@@ -581,6 +581,6 @@ if (showcase) {
             slides[current].classList.remove("is-active");
             current = (current + 1) % slides.length;
             slides[current].classList.add("is-active");
-        }, 6000);
+        }, 3000);
     }
 }
