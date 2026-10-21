@@ -2875,7 +2875,15 @@ body.gallery-is-open { overflow: hidden; }
     }
 }
 
+/* Reduce motion: keep the gentle fade, but no zoom movement */
 @media (prefers-reduced-motion: reduce) {
-    .hero-showcase img { animation: none; }
-    .hero-showcase img:first-child { opacity: 1; }
+    .hero-showcase img { animation-name: hero-fade-still; }
+}
+
+@keyframes hero-fade-still {
+    0%   { opacity: 0; }
+    4%   { opacity: 1; }
+    20%  { opacity: 1; }
+    25%  { opacity: 0; }
+    100% { opacity: 0; }
 }
